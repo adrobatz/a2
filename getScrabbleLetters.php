@@ -1,6 +1,11 @@
 <?php
 
 require('tools.php');
+require('Form.php');
+
+use DWA\Form;
+
+$form = new Form();
 
 $scrabbleLetters = [
 	'a' => '1',
@@ -39,48 +44,38 @@ if(isset($_GET['word'])) {
 	else {
 		$word = "";
 	}
-dump($word);
 
-// $results = "";
-// for ($i=0; $i < strlen($word); ++$i) { 
-// 	$results .= $i." ";
-// }
-
-// dump($results);
-
-// var sum = 0;
-// for (var i = 0; i < word.length; ++i) {
-//     sum += scores[word.charAt(i)] || 0;
-// }
-
-// alert(sum);
 
 $wordEntry = str_split($word);
-dump($wordEntry);
+
 
 $flipped = array_flip($wordEntry);
-dump($flipped);
+
 $intersect = array_intersect_key($scrabbleLetters, $flipped);
 
-dump($intersect);
-
-echo array_sum($intersect);
+$wordSum = array_sum($intersect);
 
 
-// function addtiles($newWord) {
+if(isset($_GET['triple'])) {
+	$triple = '3';
+	$bonus = $triple*$wordSum;
 
-// }
+} elseif (isset($_GET['double'])) {
+	$double = '2';
+	$bonus = $double*$wordSum;
+} else {
+	$bonus = $wordSum;
 
-// print_r(array_filter($scrabbleLetters, "addPoints"));
+}
 
-//echo array_sum($scrabbleLetters);
+$bingo = (isset($_GET['bingo'])) ? true : false; 
 
-//echo array_sum($wordEntry);
+if ($bingo) {
+	$finalScore = $bonus + '50';
+} else {
+	$finalScore = $bonus;
+}
 
-
-//array_search($word, $scrabbleLetters);
-
-
-
+echo ($finalScore);
 
 
