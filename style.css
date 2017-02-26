@@ -1,0 +1,67 @@
+body {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #0D1321;
+}
+h1 {
+    font-family: Helvetica, sans-serif;
+    font-size: 40px;
+    color: #748CAB;
+    text-align: center;
+}
+form {
+    text-align: left;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #F0EBD8;
+    padding-left: 10%;
+}
+input[type='radio'] {
+    color: #3E5C76;
+    width: 10px;
+    text-align: left;
+}
+input[type='submit'] {
+    background-color: #748CAB;
+    border: none;
+    border-radius: 5px;
+    width: 75px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    margin-left: 35%;
+    margin-top: 5%;
+    color: #F0EBD8;
+}
+input[type='submit']:hover {
+    background-color: #3E5C76;
+}
+input[type='submit']:active {
+    background-color: #F0EBD8;
+    color: #748CAB;
+}
+.resultAlert {
+    background-color: #DAFEB7;
+    box-shadow: 0px 0px 10px 5px #ACC18A;
+    border-radius: 3px;
+    color: #0D1321;
+    width: 75%;
+    text-align: center;
+    margin: 10% auto 0 auto;
+    height: 30px;
+    line-height: 30px;
+}
+.errorAlert {
+    background-color: #BF4342;
+    box-shadow: 0px 0px 10px 5px #8C1C13;
+    border-radius: 3px;
+    color: #0D1321;
+    width: 75%;
+    text-align: center;
+    margin: 10% auto 0 auto;
+    height: 30px;
+    line-height: 30px;
+}
+li {
+    list-style: none;
+}
